@@ -38,9 +38,9 @@ activityLabels <- read.table(file = file_path2)
 ## Get all subjects and create one dataframe
 subject_train <- read.table(file = file_path7)  
 subject_test <- read.table(file = file_path8)   
-subject_all = merge(subject_train,subject_test, all = TRUE)
+subject_all = merge(subject_train,subject_test, all = TRUE)  
 
-##storing the final data as dataframe 
+## Storing the final data as dataframe   
 data_by_activity_subject <- aggregate(X_all.mean_std[,1:79], by = list(by_activity = X_all.mean_std$activtyName, by_subject = X_all.mean_std$subject), FUN = mean)
 
 

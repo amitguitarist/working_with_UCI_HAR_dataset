@@ -13,3 +13,32 @@ file_path7 = './UCI HAR Dataset/train/subject_train.txt'
 ## For Subject Train   
 file_path8 = './UCI HAR Dataset/test/subject_test.txt'
 ### End of Basic Configuration ###    
+
+## Get the X of training data and store in  dataframe 
+X_train <- read.table(file = file_path3)
+
+## Get the Labels (Y) of X training data and store in  dataframe 
+y_train <- read.table(file = file_path4)
+
+## Get the X of test data and store in  dataframe 
+X_test <- read.table(file = file_path5)
+
+## Get the Labels (Y) of X testing data and store in dataframe 
+y_test <- read.table(file = file_path6)
+
+## ## Merge X of Training and Testing Data 
+X_all = merge(X_train,X_test, all = TRUE)
+
+### get the features 
+features <- read.table(file = file_path1)
+
+## get the activity labels 
+activityLabels <- read.table(file = file_path2)
+
+
+
+## Get all subjects and create one dataframe
+subject_train <- read.table(file = file_path7)
+subject_test <- read.table(file = file_path8)
+subject_all = merge(subject_train,subject_test, all = TRUE)
+
